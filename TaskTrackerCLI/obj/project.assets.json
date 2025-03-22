@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gio.DESKTOP-A2BCNE4\\source\\repos\\TaskTrackerCLI\\TaskTrackerCLI\\Task-CLI.csproj",
-      "projectName": "Task-CLI",
-      "projectPath": "C:\\Users\\Gio.DESKTOP-A2BCNE4\\source\\repos\\TaskTrackerCLI\\TaskTrackerCLI\\Task-CLI.csproj",
+      "projectUniqueName": "C:\\Users\\Gio.DESKTOP-A2BCNE4\\source\\repos\\TaskTrackerCLI\\TaskTrackerCLI\\TaskTrackerCLI.csproj",
+      "projectName": "TaskTrackerCLI",
+      "projectPath": "C:\\Users\\Gio.DESKTOP-A2BCNE4\\source\\repos\\TaskTrackerCLI\\TaskTrackerCLI\\TaskTrackerCLI.csproj",
       "packagesPath": "C:\\Users\\Gio.DESKTOP-A2BCNE4\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Gio.DESKTOP-A2BCNE4\\source\\repos\\TaskTrackerCLI\\TaskTrackerCLI\\obj\\",
       "projectStyle": "PackageReference",
