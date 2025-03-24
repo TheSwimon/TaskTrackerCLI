@@ -12,4 +12,3 @@ C:\Users\Gio.DESKTOP-A2BCNE4\source\repos\TaskTrackerCLI\TaskTrackerCLI\obj\Debu
 C:\Users\Gio.DESKTOP-A2BCNE4\source\repos\TaskTrackerCLI\TaskTrackerCLI\obj\Debug\net8.0\TaskTrackerCLI.pdb
 C:\Users\Gio.DESKTOP-A2BCNE4\source\repos\TaskTrackerCLI\TaskTrackerCLI\obj\Debug\net8.0\TaskTrackerCLI.genruntimeconfig.cache
 C:\Users\Gio.DESKTOP-A2BCNE4\source\repos\TaskTrackerCLI\TaskTrackerCLI\obj\Debug\net8.0\ref\TaskTrackerCLI.dll
-C:\Users\Gio.DESKTOP-A2BCNE4\source\repos\TaskTrackerCLI\TaskTrackerCLI\obj\Debug\net8.0\TaskTrackerCLI.sourcelink.json

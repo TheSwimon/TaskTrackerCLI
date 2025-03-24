@@ -12,13 +12,13 @@ namespace TaskTrackerCLI.Models
         public int TaskId { get; set; }
         public string Description { get; set; } = string.Empty;
         public string Status { get; set; } = string.Empty;
-        public DateTime createdAt { get; set; }
-        public DateTime? updatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
 
         public override string ToString()
         {
-            return $"TaskId: {TaskId}\nDescription: {Description}\nStatus: {Status}\nCreatedAt: {createdAt}\nUpdatedAt: {updatedAt}\n";
+            return $"TaskId: {TaskId}\nDescription: {Description}\nStatus: {Status}\nCreatedAt: {CreatedAt}\nUpdatedAt: {UpdatedAt}\n";
     }
     }
 }

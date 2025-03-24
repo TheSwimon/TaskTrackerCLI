@@ -10,13 +10,11 @@ namespace TaskTrackerCLI.Services
 {
     public class TaskRepository
     {
-        public int HighestTaskId { get; set; }
         public List<MyTask> Tasks { get; set; }
 
         public TaskRepository()
         {
             Tasks = DeserializeJson();
-            HighestTaskId = Tasks.MaxBy(task => task.TaskId)?.TaskId + 1 ?? 0;
         }
 
         public void SerializeTasks(List<MyTask> tasks)
@@ -45,16 +43,6 @@ namespace TaskTrackerCLI.Services
 
             List<MyTask> tasks = deserializedJson.Tasks;
 
-            if (tasks.Count > 0)
-            {
-                MyTask? task = tasks.MaxBy(task => task.TaskId);
-                
-                if (task != null)
-                {
-                    HighestTaskId = task.TaskId;
-                } 
-            }
-
             Tasks = tasks;
 
             return tasks;
@@ -71,6 +59,11 @@ namespace TaskTrackerCLI.Services
                 File.WriteAllText(jsonFilePath, @"{""Tasks"": []}");
             }
             return jsonFilePath;
+        }
+
+        public int GenerateUniqueId()
+        {
+            return (Tasks.MaxBy(task => task.TaskId)?.TaskId + 1) ?? 0;
         }
     }
 }

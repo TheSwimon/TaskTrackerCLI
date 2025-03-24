@@ -22,24 +22,24 @@ namespace TaskTrackerCLI.Services
 
             if (commandArgs.Length != 1)
             {
-                Console.WriteLine($"Invalid argument for \"add\" command\nCorrect usage: add \"example text\"");
+                Console.WriteLine($"# Invalid argument for \"add\" command\nCorrect usage: add \"example text\"");
                 return;
             }
 
 
             MyTask newTask = new MyTask
             {
-                TaskId = _taskRepository.HighestTaskId,
+                TaskId = _taskRepository.GenerateUniqueId(),
                 Description = commandArgs[0],
                 Status = "todo",
-                createdAt = DateTime.Now,
-                updatedAt = null
+                CreatedAt = DateTime.Now,
+                UpdatedAt = null
             };
 
             _taskRepository.Tasks.Add(newTask);
             _taskRepository.SerializeTasks(_taskRepository.Tasks);
 
-            Console.WriteLine("task added successfully");
+            Console.WriteLine($"# Task added successfully (ID {newTask.TaskId})");
         }
 
 
@@ -47,13 +47,13 @@ namespace TaskTrackerCLI.Services
         {
             if (commandArgs.Length != 2)
             {
-                Console.WriteLine($"Invalid arguments for \"update\" command\nCorrect usage: update 2 \"example text\"");
+                Console.WriteLine($"# Invalid arguments for \"update\" command\nCorrect usage: update 2 \"example text\"");
                 return;
             }
 
             if (!int.TryParse(commandArgs[0], out _)) 
             {
-                Console.WriteLine($"Invalid id\nCorrect usage: update 2 \"example text\"");
+                Console.WriteLine($"# Invalid id\nCorrect usage: update 2 \"example text\"");
                 return;
             }
 
@@ -61,14 +61,14 @@ namespace TaskTrackerCLI.Services
 
             if (task==null)
             {
-                Console.WriteLine("Couldn't find task with specified id");
+                Console.WriteLine("# Couldn't a find task with the specified id");
                 return;
             }
 
             task.Description = commandArgs[1];
-            task.updatedAt = DateTime.Now;
+            task.UpdatedAt = DateTime.Now;
             _taskRepository.SerializeTasks(_taskRepository.Tasks);
-            Console.WriteLine("task updated successfully");
+            Console.WriteLine($"# Task updated successfully (ID {commandArgs[0]})");
         }
 
 
@@ -77,13 +77,13 @@ namespace TaskTrackerCLI.Services
 
             if (status != "done" && status != "in-progress")
             {
-                Console.WriteLine("Invalid status");
+                Console.WriteLine("# Invalid status");
                 return;
             } 
 
             if (commandArgs.Length!=1)
             {
-                Console.WriteLine("unrecognized command");
+                Console.WriteLine("# Unrecognized command");
                 return;
             }
 
@@ -92,7 +92,7 @@ namespace TaskTrackerCLI.Services
 
             if (!isInteger)
             {
-                Console.WriteLine(@"Invalid id\nCorrect usage: update 2 ""example text""");
+                Console.WriteLine(@"# Invalid id\nCorrect usage: update 2 ""example text""");
                 return;
             }
 
@@ -100,40 +100,40 @@ namespace TaskTrackerCLI.Services
 
             if (task == null)
             {
-                Console.WriteLine("Couldn't find task with specified id");
+                Console.WriteLine("# Couldn't find a task with the specified id");
                 return;
             }
 
             task.Status = status;
-            task.updatedAt = DateTime.Now;
+            task.UpdatedAt = DateTime.Now;
             _taskRepository.SerializeTasks(_taskRepository.Tasks);
-            Console.WriteLine("task updated successfully");
+            Console.WriteLine($"# Task updated successfully (ID {task.TaskId})");
         }
 
         public void DeleteTask(string[] commandArgs)
         {
            if (commandArgs.Length!=1)
             {
-                Console.WriteLine("Invalid argument for Delete command\nCorrect Usage: Delete 2");
+                Console.WriteLine("# Invalid argument for Delete command\nCorrect Usage: Delete 2");
             }
 
             Boolean isInteger = int.TryParse(commandArgs[0], out int index);
 
            if (!isInteger)
             {
-                Console.WriteLine("Invalid id\nCorrect usage: Delete 2");
+                Console.WriteLine("# Invalid id\nCorrect usage: Delete 2");
             }
 
             MyTask? task = _taskRepository.Tasks.Find(task => task.TaskId == index);
             if (task == null)
             {
-                Console.WriteLine("couldn't find task with specified id");
+                Console.WriteLine("# couldn't find a task with the specified id");
                 return;
             }
 
             _taskRepository.Tasks.Remove(task);
             _taskRepository.SerializeTasks(_taskRepository.Tasks);
-            Console.WriteLine("task removed successfully");
+            Console.WriteLine($"# Task removed successfully (ID {index})");
         }
 
         public void GetTasks(string[] commandArgs)
@@ -143,7 +143,7 @@ namespace TaskTrackerCLI.Services
 
             if (commandArgs.Length>1)
             {
-                Console.WriteLine("Unrecognized command");
+                Console.WriteLine("# Unrecognized command");
                 return;
             }
 
@@ -154,7 +154,7 @@ namespace TaskTrackerCLI.Services
                     tasks = _taskRepository.Tasks.Where(task => task.Status == commandArgs[0]).ToList();
                 } else
                 {
-                    Console.WriteLine("Invalid status code");
+                    Console.WriteLine("# Invalid status code");
                     return;
                 }
             }
