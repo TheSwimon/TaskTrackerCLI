@@ -5,8 +5,8 @@ example implementation for the [task-tracker-cli](https://roadmap.sh/projects/ta
 - **Add a task** - Add a new task to the json data storage.
 - **Update a task description** - Update the description of an existing task.
 - **Delete a task** - Delete an existing task.
-- **Update a task status** - update the status of an existing task to one of the following statuses ("todo","in-progress","done").
-- **List** - list all tasks or filter by status.
+- **Update a task status** - Update the status of an existing task, e.g. "in-progress","done".
+- **List** - List all tasks or filter by status.
 
 
 ## Install
