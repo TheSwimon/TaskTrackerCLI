@@ -1,7 +1,7 @@
 # Task Tracker CLI
-Task Tracker CLI is a command line tool, that helps manage tasks effiiently, using JSON file storage. 
+Task Tracker CLI is a command line tool, that helps with managing tasks effiiently, using JSON file storage. Clients can Add, Update, Delete and List the tasks from the CLI, utilizing commands.
 
-example implementation for the [task-tracker-cli](https://roadmap.sh/projects/task-tracker) challenge from [Roadmap.sh](roadmap.sh).
+Example implementation for the [task-tracker-cli](https://roadmap.sh/projects/task-tracker) challenge from [Roadmap.sh](roadmap.sh).
 
 ## Features
 - **Add a task** - Add a new task to the json data storage.
