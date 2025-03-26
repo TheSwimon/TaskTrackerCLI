@@ -12,23 +12,17 @@ Example implementation for the [task-tracker-cli](https://roadmap.sh/projects/ta
 
 
 ## Install
-Clone the repository
+Clone the repository & Navigate to the project directory
 
 ```bash
 git clone https://github.com/TheSwimon/TaskTrackerCLI.git
-```
-
-Navigate to the project directory and build
-```bash
 cd TaskTrackerCLI
-dotnet build
 ```
 
-Navigate to the output directory and run the project using task-tracker commands.
+Run the CLI tool using dotnet run
 ```bash
-cd \bin\debug\net8.0
-TaskTrackerCLI add "Example task" 
-# Task has been added successfully.
+dotnet run -- add "example task"
+# Task added successfully (ID 0)
 ```
 
 ## Command Examples

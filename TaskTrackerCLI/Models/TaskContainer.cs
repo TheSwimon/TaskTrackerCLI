@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaskTrackerCLI.Models
+namespace TaskTrackerCLI.Models;
+
+public class TaskContainer
 {
-    public class TaskContainer
-    {
-        public List<MyTask> Tasks { get; set; } = new();
-    }
+    public List<MyTask> Tasks { get; set; } = new();
 }
