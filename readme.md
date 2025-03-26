@@ -28,22 +28,22 @@ dotnet run -- add "example task"
 ## Command Examples
 ```cli
 # Adding a new task
-TaskTrackerCLI add "Buy groceries"
+dotnet run -- add "Buy groceries"
 # Output: Task added successfully
 
 # Updating and deleting tasks
-TaskTrackerCLI update 1 "Buy groceries and cook dinner"
-TaskTrackerCLI delete 1
+dotnet run -- update 1 "Buy groceries and cook dinner"
+dotnet run -- delete 1
 
 # Marking a task as in progress or done
-TaskTrackerCLI mark-in-progress 1
-TaskTrackerCLI mark-done 1
+dotnet run -- mark-in-progress 1
+dotnet run -- mark-done 1
 
 # Listing all tasks
-TaskTrackerCLI list
+dotnet run -- list
 
 # Listing tasks by status
-TaskTrackerCLI list done
-TaskTrackerCLI list todo
-TaskTrackerCLI list in-progress
+dotnet run -- list done
+dotnet run -- list todo
+dotnet run -- list in-progress
 ```
